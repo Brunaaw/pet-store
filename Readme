@@ -1,0 +1,38 @@
+# Sistema de Gerenciamento para Loja de Animais
+
+Este projeto demonstra a aplicação dos princípios SOLID em JavaScript para construir um sistema de gerenciamento para uma loja de animais. 
+
+
+## Princípios SOLID Aplicados
+
+Para essa atividade é fundamental aplicar os princípios do fundamento do SOLID, para isso, irei rever os conceitos abaixo e como eu resolvi usar em meu projeto. 
+
+1. **Responsabilidade Única (SRP)**: A classe `Pet` é responsável apenas por gerenciar os dados dos animais de estimação.
+2. **Aberto/Fechado (OCP)**: A classe base `Product` pode ser estendida para criar diferentes tipos de produtos (`Food`, `Toy`).
+3. **Substituição de Liskov (LSP)**: A hierarquia de classes `Care`, `BasicCare`, e `SpecialCare` garante que a substituição de subclasses se comporta de maneira consistente.
+4. **Segregação de Interface (ISP)**: A classe `Customer` representa informações dos clientes sem métodos desnecessários.
+5. **Inversão de Dependência (DIP)**: A interface `Persistence` é implementada pela classe `FilePersistence`, e a `PetStore` depende da abstração, não da implementação concreta.
+
+## Testes
+
+Os testes garantem que todas as funcionalidades do sistema estão funcionando conforme o esperado. Eles estão localizados na pasta `tests/`.
+
+## Resumo das lógicas de testes
+- Para os testes precisei criar instâncias com dados específicos.
+- Utilizo vários métodos de testes como `getDetails` para obter saídas e para comparar os valores uso o `expect`
+- Utilizo o mock e spies para verificar se os métodos estão sendo chamados corretamente. 
+- Como forma de boas práticas, uso também o lançamento de erro conforme o esperado. 
+
+## Como Executar
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Brunaaw/pet-store   
+
+2. Instale as dependencias
+  ```bash
+  npm install
+
+3. execute os testes
+  ```bash
+  npm test
